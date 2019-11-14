@@ -1,0 +1,92 @@
+****************
+* Project name : Double Linked List
+* Class : Computer Science 221
+* Date : 06/13/2018
+* Your name : Rohit Gangurde
+**************** 
+
+OVERVIEW:
+
+ ListTester tests different type of lists to ensure they are implemented correctly, specifically double linked list.
+
+
+INCLUDED FILES:
+
+ * ListTester.java
+ * IUDoubleLinkedList.java
+ * IUSingleLinkedList.java
+ * IUArrayList.java
+ * IndexedUnsortedList.java
+ * LinearNode.java
+ * README - this file
+
+
+COMPILING AND RUNNING:
+
+ From the directory containing all source files, compile the
+ driver class (and all dependencies) with the command:
+ $ javac ListTesteter.java
+
+ Run the compiled class file with the command:
+ $ java ListTester
+
+ Console output will give the results after the program finishes. 
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ ListTester class is designed to test different types of lists. It 
+ contains different tests for the methods in the list class. It has
+ total of 2629 tests. Concurent Modification is also tested for. The
+ double linked list class implements the IndexedUnsortedList interface.
+ This means it inherits all the methods of the IndexedUnsortedList
+ interface. The double linked list class also extends the LinearNode.java 
+ file. Hence, the double linked list uses the concepts of nodes to 
+ manipulate the list. It also uses the list iterator to traverse through 
+ the class. The list iterator provides an efficient way to deal with 
+ problems or scenarios involving indexes. The concept of nodes is way more
+ efficient than an array. Nodes work like, insert and pull, to add a new 
+ element, you just insert it in there, and to remove an element you just
+ pull it out of the list. In an array list, we need to remove the element
+ and then shift the elements after that back by one place. Same goes when
+ adding an element. This is the perk of double linked list. Perks of using
+ an array list is the easy navigation throughout the list. That being said, 
+ implementation of list iterator class nullifies this advantage of array lists. 
+ ListTester class tests for lists having no element, single element, two element
+ and three element. 
+
+TESTING:
+
+ Testing for the class took long. As double linked list enables the user
+ user to travel in forward and backward direction throughout the list, 
+ I had to be careful when writing the code for this program and not mess
+ up the node links, the modCounts. It was more logical testing than trial
+ and error.
+ I managed to maintain the node links throughout the tests. However I was 
+ unable to manage the Concurrent Modification and as such, my doublelinkedlist
+ class fails 18 of the concurrent modification tests. 
+
+DISCUSSION:
+ 
+ When working with double linked list, the most trouble I encountered was in
+ maintaining the next and previous links for the nodes. This was really tricky 
+ as complex scenarios were also involved. I had to check if the previousNode 
+ was head or was it tail, if the nextNode was head or tail, if the nextNode is
+ null, so and so forth. I tried different methods of adding the elements in,
+ such as instead of putting a node with the element in between previousNode 
+ and nextNode, I tried swapping the elements of previousNode and the node 
+ to be added so that I can put the new node with the element of the previousNode
+ before the previousNode and re-establish the links between the node before the 
+ previousNode and and the new node. But this created more complications which 
+ resulted in me adopting the regular way of adding the elements. 
+ The challenging method that I had to deal with was the remove method of the 
+ list iterator class. It was challenging as I had to incorporate and think of
+ which element would be removed if next was called and which element would be 
+ removed if previous was called. What would happen if the element to be removed
+ in a node which is head, or tail. Incorporating idea of previous method in 
+ coding remove method was tough. With the help of the tutor I was bale to figure
+ it out. 
+ 
+EXTRA CREDIT:
+
+ N/A
+
